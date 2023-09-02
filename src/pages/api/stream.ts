@@ -4,7 +4,7 @@ import {
   ParsedEvent,
   ReconnectInterval
 } from "eventsource-parser";
-import { checkForPluginOperation, communicateWithOpenAI } from './helperFunctions'; // Zaimportuj funkcje
+import { checkForPluginOperation, communicateWithOpenAI } from '../../components/helperFunctions'; // Zaimportuj funkcje
 
 const localEnv = import.meta.env.OPENAI_API_KEY;
 const vercelEnv = process.env.OPENAI_API_KEY;
