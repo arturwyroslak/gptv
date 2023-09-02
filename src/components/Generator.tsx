@@ -284,9 +284,9 @@ export default function (props: { prompts: PromptItem[] }) {
           messaages={messageList()}
         />
         <PluginAction
-          pluginList={/* lista pluginów */}
-          onTogglePlugin={/* funkcja do przełączania pluginów */}
-        />
+  pluginList={null}
+  onTogglePlugin={null}
+/>
       </div>
     </Show>
         <Show
