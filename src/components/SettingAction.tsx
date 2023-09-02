@@ -29,7 +29,7 @@ export default function SettingAction(props: {
             }}
           />
         </SettingItem>
-        <SettingItem icon="i-carbon:user-online" label="系统角色指令">
+        <SettingItem icon="i-carbon:user-online" label="Rola systemowa">
           <input
             type="text"
             value={props.setting().systemRule}
@@ -42,7 +42,7 @@ export default function SettingAction(props: {
             }}
           />
         </SettingItem>
-        <SettingItem icon="i-carbon:data-enrichment" label="思维发散程度">
+        <SettingItem icon="i-carbon:data-enrichment" label="Kreatywność">
           <input
             type="range"
             min={0}
@@ -80,7 +80,7 @@ export default function SettingAction(props: {
         </SettingItem>
         <SettingItem
           icon="i-carbon:3d-curve-auto-colon"
-          label="开启连续对话，将加倍消耗 Token"
+          label="Ciągły dialog podwoi zużycie tokenóœ"
         >
           <label class="relative inline-flex items-center cursor-pointer ml-1">
             <input
@@ -105,16 +105,16 @@ export default function SettingAction(props: {
             setShown(!shown())
           }}
           icon="i-carbon:settings"
-          label="设置"
+          label="Konfiguracja"
         />
         <div class="flex">
           <ActionItem
             onClick={exportJpg}
             icon="i-carbon:image"
-            label="导出图片"
+            label="Eksportowanie obrazu"
           />
           <ActionItem
-            label="导出 Markdown"
+            label="Markdown"
             onClick={async () => {
               await exportMD(props.messaages)
               setCopied(true)
@@ -127,12 +127,12 @@ export default function SettingAction(props: {
           <ActionItem
             onClick={props.reAnswer}
             icon="i-carbon:reset"
-            label="重新回答"
+            label="Przeforłumuj ponownie"
           />
           <ActionItem
             onClick={props.clear}
             icon="i-carbon:trash-can"
-            label="清空对话"
+            label="Wyczyść"
           />
         </div>
       </div>
@@ -180,8 +180,8 @@ function exportJpg() {
 
 async function exportMD(messages: ChatMessage[]) {
   const role = {
-    system: "系统",
-    user: "我",
+    system: "System",
+    user: "Użytkownik",
     assistant: "ChatGPT"
   }
   await copyToClipboard(
