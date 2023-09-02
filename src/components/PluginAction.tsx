@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { communicateWithOpenAI } from './helperFunctions'; // Zaimportuj funkcję
 
 interface PluginActionProps {
   pluginList: any[];
-  onTogglePlugin: (pluginUrl: string) => void;
 }
 
-const PluginAction: React.FC<PluginActionProps> = ({ pluginList, onTogglePlugin }) => {
+const PluginAction: React.FC<PluginActionProps> = ({ pluginList }) => {
+  const [enabledPlugins, setEnabledPlugins] = useState<string[]>([]);
+
+  const onTogglePlugin = (pluginUrl: string) => {
+    setEnabledPlugins(prevState => {
+      if (prevState.includes(pluginUrl)) {
+        return prevState.filter(url => url !== pluginUrl);
+      } else {
+        return [...prevState, pluginUrl];
+      }
+    });
+  };
+
+useEffect(() => {
+  const fetchData = async () => {
+    const response = await communicateWithOpenAI("some message", "your_openai_key", enabledPlugins);
+    // Zrób coś z odpowiedzią, jeśli to konieczne
+  };
+
+  fetchData();
+}, [enabledPlugins]);
+
   return (
     <div className="plugin-action">
       {pluginList.map((plugin, index) => (
