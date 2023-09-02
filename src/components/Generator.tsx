@@ -3,6 +3,7 @@ import { createResizeObserver } from "@solid-primitives/resize-observer"
 import MessageItem from "./MessageItem"
 import type { ChatMessage } from "~/types"
 import SettingAction from "./SettingAction"
+import PluginAction from "./PluginAction" // Zaimportuj komponent PluginAction
 import PromptList from "./PromptList"
 import { Fzf } from "fzf"
 import { defaultMessage, defaultSetting } from "~/default"
@@ -274,14 +275,20 @@ export default function (props: { prompts: PromptItem[] }) {
         }
       >
         <Show when={!compatiblePrompt().length && height() === "48px"}>
-          <SettingAction
-            setting={setting}
-            setSetting={setSetting}
-            clear={clearSession}
-            reAnswer={reAnswer}
-            messaages={messageList()}
-          />
-        </Show>
+      <div class="flex">
+        <SettingAction
+          setting={setting}
+          setSetting={setSetting}
+          clear={clearSession}
+          reAnswer={reAnswer}
+          messaages={messageList()}
+        />
+        <PluginAction
+          pluginList={/* lista pluginów */}
+          onTogglePlugin={/* funkcja do przełączania pluginów */}
+        />
+      </div>
+    </Show>
         <Show
           when={!loading()}
           fallback={() => (
