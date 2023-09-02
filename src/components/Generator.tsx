@@ -187,7 +187,7 @@ export default function (props: { prompts: PromptItem[] }) {
     }
     const data = response.body
     if (!data) {
-      throw new Error("没有返回数据")
+      throw new Error("Nie zwrócono żadnych danych")
     }
     const reader = data.getReader()
     const decoder = new TextDecoder("utf-8")
@@ -306,7 +306,7 @@ export default function (props: { prompts: PromptItem[] }) {
             <textarea
               ref={inputRef!}
               id="input"
-              placeholder="与 ta 对话吧"
+              placeholder="Wpisz zapytanie"
               autocomplete="off"
               value={inputContent()}
               autofocus
