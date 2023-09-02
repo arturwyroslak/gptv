@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { checkForPluginOperation, communicateWithOpenAI } from './helperFunctions'; // Zaimportuj funkcje pomocnicze
+import { checkForPluginOperation, communicateWithOpenAI } from '../../components/helperFunctions'; // Zaimportuj funkcje pomocnicze
 
 export const post: APIRoute = async ({ request }) => {
   const { message, key } = (await request.json()) ?? {};
