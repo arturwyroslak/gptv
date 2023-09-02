@@ -27,8 +27,8 @@
     "markdown-it-highlightjs": "^4.0.1",
     "markdown-it-katex": "^2.0.3",
     "solid-js": "^1.6.11",
-    "axios": "^0.26.0",  // Dodane
-    "swagger-client": "^4.0.0"  // Dodane
+    "axios": "^0.26.0",
+    "swagger-client": "^4.0.0"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.16",
