@@ -61,7 +61,7 @@ export default function SettingAction(props: {
         </SettingItem>
         <SettingItem
           icon="i-carbon:save-image"
-          label="记录对话内容，刷新不会消失"
+          label="Zapis rozmów"
         >
           <label class="relative inline-flex items-center cursor-pointer ml-1">
             <input
@@ -80,7 +80,7 @@ export default function SettingAction(props: {
         </SettingItem>
         <SettingItem
           icon="i-carbon:3d-curve-auto-colon"
-          label="Ciągły dialog podwoi zużycie tokenóœ"
+          label="Ciągły dialog podwoi zużycie tokenów"
         >
           <label class="relative inline-flex items-center cursor-pointer ml-1">
             <input
@@ -127,7 +127,7 @@ export default function SettingAction(props: {
           <ActionItem
             onClick={props.reAnswer}
             icon="i-carbon:reset"
-            label="Przeforłumuj ponownie"
+            label="Ponów"
           />
           <ActionItem
             onClick={props.clear}
