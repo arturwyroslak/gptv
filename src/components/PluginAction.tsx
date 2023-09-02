@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { communicateWithOpenAI } from '../../pages/api/helperFunctions'; // Zaimportuj funkcję
+import { communicateWithOpenAI } from './helperFunctions'; // Zaimportuj funkcję
 
 interface PluginActionProps {
   pluginList: any[];
